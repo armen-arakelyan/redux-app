@@ -1,0 +1,89 @@
+.calculator{
+  display: flex;
+  background-color: aqua;
+  flex-direction: column;
+  width:35%;
+  align-items: center;
+  margin:auto;
+  border-radius: 10px;
+}
+.mybtns{
+  padding:8px 0px;
+  width:430px;
+}
+.mybtns button{
+  width:200px;
+  padding: 18px 0px;
+  border:none;
+  background-color: black;
+  margin-left:10px;
+  margin-bottom: 10px;
+  color:white;
+  font-size:24px;
+  border-radius: 10px;
+  cursor:pointer;
+}
+.calculators_inp_res{
+  display: flex;
+  padding: 15px 0px;
+  width: 88%;
+}
+.calculators_inp_res span{
+  padding: 5px 15px;
+  font-size: 50px;
+  width:22%;
+  text-align: end;
+}
+input{
+  border-radius: 5px;
+  border:none;
+  font-size: 25px;
+  width:78%;
+}
+table {
+  border-collapse: collapse;
+  margin-top: 25px;
+  font-family: sans-serif;
+  width: 100%;
+}
+table thead tr {
+background-color: #009879;
+color: #ffffff;
+text-align: left;
+}
+table th,
+table td {
+  padding: 22px 15px;
+}
+table tbody tr:nth-of-type(even) {
+background-color: #72727231;
+}
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid blue;
+  border-color: blue transparent blue transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
