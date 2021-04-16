@@ -5,6 +5,7 @@ import {useSelector,useDispatch} from 'react-redux';
 function Header(){
     const tiv=useSelector(state=>state.tiv);
     const dispatch=useDispatch();
+    
     let inpValue=0;
     return(
         <div className="calculator">

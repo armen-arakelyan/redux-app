@@ -1,28 +1,25 @@
-import React,{Component} from 'react';
-import Footer from './Footer'
+import React,{useEffect, useState} from 'react';
+import Footer from './Footer';
+import axios from 'axios'
 
-export default class Body extends Component{
-    state={
-        data:[],
-        loading:true
+const Body=()=>{
+    const [data,setData]=useState([])
+    const [loading,setLoader]=useState(true)
+    const getData=async()=>{
+        let users='';
+            await axios('https://jsonplaceholder.typicode.com/posts')
+              .then(finData=>users=finData)
+              setData(users.data)
     }
-    Update=()=>{
-        if(this.state.data.length>0){
-            this.setState({loading:false})
-        }else{
-        }
-    }
-         async componentDidMount(){
-       let users='';
-      await fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res=>res.json())
-        .then(finData=>users=finData)
-        this.setState({data:users})
-        this.Update()
-         }
-     render(){
+         useEffect(()=>{
+                if(data.length>0){
+                    setLoader(false)
+                }else{
+                    getData()
+                }
+         },[data,loading])
         return(
-            this.state.loading?<Footer />:
+            loading?<Footer />:
                 <table>
                     <thead>
                         <tr>
@@ -34,7 +31,7 @@ export default class Body extends Component{
                     </thead>
                     <tbody>
                     {
-                    this.state.data.map((v,i)=>
+                    data.map((v,i)=>
                         <tr key={i}>
                             <td>{v.userId}</td>
                             <td>{v.id}</td>
@@ -47,4 +44,4 @@ export default class Body extends Component{
                 </table>
         )
     }
-}
+export default Body;
